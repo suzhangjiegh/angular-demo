@@ -28,12 +28,17 @@ export class AppComponent implements OnInit{
 	}
 
 
-	getHeroes(): void {
+	/*getHeroes(): void {
 		let that =this;
 		this.heroService.getHeroesSlowly().then(function (heros) {
 			console.log("getHeroes");
 			that.heroes=heros
 		});
+	}*/
+
+	async getHeroes(): void {
+		this.heroes = await this.heroService.getHeroes();
+		console.log("this.heroes",this.heroes);
 	}
 
 	onSelect(hero: Hero): void {

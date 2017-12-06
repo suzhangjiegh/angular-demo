@@ -36,7 +36,7 @@ export class AppComponent implements OnInit{
 		});
 	}*/
 
-	async getHeroes(): void {
+	async getHeroes() {
 		this.heroes = await this.heroService.getHeroes();
 		console.log("this.heroes",this.heroes);
 	}

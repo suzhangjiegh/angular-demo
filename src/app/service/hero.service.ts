@@ -8,7 +8,7 @@ export class HeroService{
 
 	getHeroes(): Promise<Hero[]>{
 
-		console.log('hero.service1',HEROES);
+		console.log('hero.service1 getHeroes',HEROES);
 		return Promise.resolve(HEROES);
 	}
 
@@ -20,6 +20,7 @@ export class HeroService{
 	}
 
 	getHero(id: number): Promise<Hero> {
+		console.log('hero.service1 getHero',HEROES);
 		return this.getHeroes()
 			.then(heroes => heroes.find(hero => hero.id === id));
 	}

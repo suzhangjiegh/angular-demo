@@ -3,6 +3,8 @@
  *
  */
 import { Component,OnInit } from '@angular/core';
+import {Router} from "@angular/router";
+
 import {HeroService} from "./service/hero.service";
 import {Hero} from "./bean/hero";
 
@@ -20,9 +22,10 @@ export class HeroesComponent implements OnInit {
 
 	private selectedHero: Hero;
 
-	constructor(private heroService: HeroService) {
-
-	}
+	constructor(
+		private heroService: HeroService,
+		private router: Router,
+	) {}
 
 	// 官网方法
 	/*getHeroes(): void {
@@ -40,4 +43,7 @@ export class HeroesComponent implements OnInit {
 		this.selectedHero = hero;
 	}
 
+	gotoDetail(): void {
+		this.router.navigate(['/detail', this.selectedHero.id]);
+	}
 }
